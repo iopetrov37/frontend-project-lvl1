@@ -21,7 +21,4 @@ extends:
 rules:
 <<<<<<< HEAD
   no-console: 0  
-=======
-  no-console: 0
 
->>>>>>> 9bd148c8df319213a88c9dddf3b8c16e425ab461
