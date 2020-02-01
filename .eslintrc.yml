@@ -19,6 +19,5 @@ extends:
   - 'plugin:jest/recommended'
 
 rules:
-<<<<<<< HEAD
   no-console: 0  
 
