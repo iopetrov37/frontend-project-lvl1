@@ -2,7 +2,7 @@
   "name": "iotest",
   "version": "1.0.2",
   "description": "my first hexlet project",
-  "main": "index.js",
+  "main": "",
   "bin": {
     "brain-even": "dist/bin/brain-even.js",
     "brain-calc": "dist/bin/brain-calc.js",
