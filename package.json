@@ -22,6 +22,15 @@
     "type": "git",
     "url": "git+https://github.com/iopetrov37/frontend-project-lvl1.git"
   },
+  "keywords": [
+    "brain-games",
+    "brain-calc",
+    "brain-prime",
+    "brain-progression",
+    "brain-gcd",
+    "hexlet",
+    "hexletproject",
+    "myfirstproject"]
   "author": "Ilya Petrov",
   "license": "ISC",
   "bugs": {
