@@ -1,6 +1,8 @@
 #!/usr/bin/env node
-import brainGame from '..';
+import makeBrainGame from '..';
 import randomNum from '../randomNum';
+
+const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const isPrime = (num) => {
   if (num < 2) {
@@ -8,6 +10,9 @@ const isPrime = (num) => {
   }
 
   for (let i = 2; i < num; i += 1) {
+    if (i > num / 2) {
+      return true;
+    }
     if (num % i === 0) {
       return false;
     }
@@ -16,7 +21,6 @@ const isPrime = (num) => {
   return true;
 };
 
-const description = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 const gamePrime = () => {
   const randomNumber = randomNum(1, 99);
   const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
@@ -28,4 +32,4 @@ const gamePrime = () => {
   return result;
 };
 
-export default () => brainGame(gamePrime, description);
+export default () => makeBrainGame(gamePrime, description);

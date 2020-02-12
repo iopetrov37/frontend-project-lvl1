@@ -1,30 +1,30 @@
 #!/usr/bin/env node
-import brainGame from '..';
+import makeBrainGame from '..';
 import randomNum from '../randomNum';
 
 const description = 'What number is missing in the progression?';
-
+const progressionLength = 10;
 
 const gameProgression = () => {
   const start = randomNum(1, 99);
   const stepSize = randomNum(1, 9);
-  const hidePosition = randomNum(0, 9);
-  const maxSteps = 10;
+  const hidePosition = randomNum(0, progressionLength - 1);
   const correctAnswer = start + stepSize * hidePosition;
-  let progress = ' ';
-  for (let countSteps = 0; countSteps < maxSteps; countSteps += 1) {
-    const point = start + stepSize * countSteps;
-    if (hidePosition === countSteps) {
-      progress += '.. ';
+  const hideSymbol = '..';
+  let progression = '';
+  for (let i = 0; i < progressionLength; i += 1) {
+    const point = start + stepSize * i;
+    if (hidePosition === i) {
+      progression += `${hideSymbol} `;
     } else {
-      progress += `${point} `;
+      progression += `${point} `;
     }
   }
   const result = {
     answer: correctAnswer.toString(),
-    question: `${progress}`,
+    question: `${progression}`,
   };
   return result;
 };
 
-export default () => brainGame(gameProgression, description);
+export default () => makeBrainGame(gameProgression, description);

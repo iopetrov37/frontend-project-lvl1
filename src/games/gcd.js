@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import brainGame from '..';
+import makeBrainGame from '..';
 import randomNum from '../randomNum';
 
 const description = 'Find the greatest common divisor of given numbers.';
@@ -23,4 +23,4 @@ const gameGcd = () => {
   return result;
 };
 
-export default () => brainGame(gameGcd, description);
+export default () => makeBrainGame(gameGcd, description);

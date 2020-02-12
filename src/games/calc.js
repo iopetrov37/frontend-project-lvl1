@@ -1,13 +1,14 @@
 #!/usr/bin/env node
-import brainGame from '..';
+import makeBrainGame from '..';
 import randomNum from '../randomNum';
 
 const description = 'What is the result of the expression?';
-const gameCalc = () => {
-  const operator = ['+', '-', '*'];
+const operators = ['+', '-', '*'];
+
+const makeCalculation = () => {
   const randomNumber1 = randomNum(1, 99);
   const randomNumber2 = randomNum(1, 99);
-  const randomOperator = randomNum(0, 2);
+  const randomOperator = randomNum(0, operators.length - 1);
   let correctAnswer;
   switch (randomOperator) {
     case 0:
@@ -24,10 +25,10 @@ const gameCalc = () => {
 
   const result = {
     answer: correctAnswer.toString(),
-    question: `${randomNumber1} ${operator[randomOperator]} ${randomNumber2}`,
+    question: `${randomNumber1} ${operators[randomOperator]} ${randomNumber2}`,
   };
 
   return result;
 };
 
-export default () => brainGame(gameCalc, description);
+export default () => makeBrainGame(makeCalculation, description);
