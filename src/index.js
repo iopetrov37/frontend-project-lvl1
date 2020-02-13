@@ -14,7 +14,7 @@ const makeBrainGame = (gameCorrectAnswer, description) => {
       console.log('Correct!');
     } else {
       console.log(`\n${answer} is wrong answer ;(. Correct answer was ${correctAnswer.answer}.`);
-      console.log(`\nLet's try again, ${name}!`);
+      console.log(`Let's try again, ${name}!`);
       return;
     }
   }
