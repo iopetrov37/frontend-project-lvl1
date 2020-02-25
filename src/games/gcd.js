@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import makeBrainGame from '..';
 import randomNum from '../randomNum';
 
@@ -12,7 +11,7 @@ const findGcd = (num1, num2) => {
   return findGcd(num2, num3);
 };
 
-const gameGcd = () => {
+const defineGcd = () => {
   const randomNumber1 = randomNum(1, 99);
   const randomNumber2 = randomNum(1, 99);
   const result = {
@@ -23,4 +22,4 @@ const gameGcd = () => {
   return result;
 };
 
-export default () => makeBrainGame(gameGcd, description);
+export default () => makeBrainGame(defineGcd, description);

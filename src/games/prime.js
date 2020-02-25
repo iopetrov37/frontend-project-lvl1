@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 import makeBrainGame from '..';
 import randomNum from '../randomNum';
 
@@ -9,10 +8,7 @@ const isPrime = (num) => {
     return false;
   }
 
-  for (let i = 2; i < num; i += 1) {
-    if (i > num / 2) {
-      return true;
-    }
+  for (let i = 2; i < num / 2; i += 1) {
     if (num % i === 0) {
       return false;
     }
@@ -21,7 +17,7 @@ const isPrime = (num) => {
   return true;
 };
 
-const gamePrime = () => {
+const definePrimeNumber = () => {
   const randomNumber = randomNum(1, 99);
   const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
   const result = {
@@ -32,4 +28,4 @@ const gamePrime = () => {
   return result;
 };
 
-export default () => makeBrainGame(gamePrime, description);
+export default () => makeBrainGame(definePrimeNumber, description);
