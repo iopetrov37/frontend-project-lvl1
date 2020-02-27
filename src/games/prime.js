@@ -17,15 +17,15 @@ const isPrime = (num) => {
   return true;
 };
 
-const definePrimeNumber = () => {
-  const randomNumber = randomNum(1, 99);
-  const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
+const generateGameData = () => {
+  const question = randomNum(1, 99);
+  const correctAnswer = isPrime(question) ? 'yes' : 'no';
   const result = {
     answer: correctAnswer,
-    question: `${randomNumber}`,
+    question: question.toString(),
   };
 
   return result;
 };
 
-export default () => makeBrainGame(definePrimeNumber, description);
+export default () => makeBrainGame(generateGameData, description);

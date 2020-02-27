@@ -9,7 +9,7 @@ const makeRandomOperator = (arrayOfOperators) => {
   return operators[index];
 };
 
-const makeCalculation = () => {
+const generateGameData = () => {
   const randomNumber1 = randomNum(1, 99);
   const randomNumber2 = randomNum(1, 99);
   const randomOperator = makeRandomOperator(operators);
@@ -24,7 +24,7 @@ const makeCalculation = () => {
     case '*':
       correctAnswer = randomNumber1 * randomNumber2;
       break;
-    default: correctAnswer = randomNumber1 + randomNumber2;
+    default: break;
   }
 
   const result = {
@@ -35,4 +35,4 @@ const makeCalculation = () => {
   return result;
 };
 
-export default () => makeBrainGame(makeCalculation, description);
+export default () => makeBrainGame(generateGameData, description);

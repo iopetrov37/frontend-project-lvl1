@@ -3,7 +3,7 @@ import randomNum from '../randomNum';
 
 const isEven = (question) => question % 2 === 0;
 const description = 'Answer "yes" if number even otherwise answer "no".';
-const defineEvenNumber = () => {
+const generateGameData = () => {
   const question = randomNum(1, 99);
   const correctAnswer = isEven(question) ? 'yes' : 'no';
   const result = {
@@ -14,4 +14,4 @@ const defineEvenNumber = () => {
   return result;
 };
 
-export default () => makeBrainGame(defineEvenNumber, description);
+export default () => makeBrainGame(generateGameData, description);

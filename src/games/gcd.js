@@ -11,7 +11,7 @@ const findGcd = (num1, num2) => {
   return findGcd(num2, num3);
 };
 
-const defineGcd = () => {
+const generateGameData = () => {
   const randomNumber1 = randomNum(1, 99);
   const randomNumber2 = randomNum(1, 99);
   const result = {
@@ -22,4 +22,4 @@ const defineGcd = () => {
   return result;
 };
 
-export default () => makeBrainGame(defineGcd, description);
+export default () => makeBrainGame(generateGameData, description);
